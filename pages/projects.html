@@ -8,14 +8,14 @@
 </head>
 <body>
     <nav class="sidebar">
-        <h1>My Site</h1>
+        <h1>zenze's website</h1>
         <ul>
             <li><a href="../index.html">Home</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="about.html">About</a></li>
         </ul>
-        <p class="sidebar-updated">Last updated: March 2026</p>
+        <p class="sidebar-updated">Last updated: 21 March 2026</p>
     </nav>
 
     <main class="content">
@@ -29,18 +29,18 @@
             <div class="project-list">
                 <table>
                     <tr>
-                        <th>Project</th>
+                        <th style="font-weight: bold;">Projects</th>
                     </tr>
                 </table>
                 <table id="projectTable">
                     <tr class="project-row" data-project="1">
-                        <td>Project One</td>
+                        <td>Markov Janken</td>
                     </tr>
                     <tr class="project-row" data-project="2">
-                        <td>Project Two</td>
+                        <td>Bad Apple PSP</td>
                     </tr>
                     <tr class="project-row" data-project="3">
-                        <td>Project Three</td>
+                        <td>zecache</td>
                     </tr>
                 </table>
             </div>
@@ -54,16 +54,22 @@
     <script>
         const projects = {
             1: {
-                title: "Project One",
-                content: "<p>Description of your first project goes here. What did you build? What technologies did you use?</p><p>You can add more details, images, or links here.</p>"
+                title: "Markov Janken",
+                description: "Markov janken is just rock paper scissor but the bot learns from your moves and tries to predict you. It has a AI that uses a simple Markov Chain to predict a player’s next move in a game (like Rock-Paper-Scissors) based on their last two moves. It looks for patterns in what the player typically does after specific move pairs, predicts the most likely next move, and plays the counter. If no pattern is found, it chooses randomly. Over time, it can adapt to patterns in human behavior, but it won’t achieve a perfect win rate because players can change their strategy once they notice it.",
+                image: "images/markov-janken.png",
+                github: "https://github.com/zenzesama/markov-janken-pygame"
             },
             2: {
-                title: "Project Two",
-                content: "<p>Description of your second project goes here. Add links or images as needed.</p>"
+                title: "Bad Apple PSP",
+                description: "This project runs the iconic Bad Apple!! video on a PSP. It's basically a fun experiment in squeezing video playback out of really limited hardware, converting frames and rendering them efficiently so the animation actually works on the device. Everything needed to run it is included in the repo. It is less about practicality and more about seeing how far you can push the PSP.",
+                image: "images/bad-apple-psp.png",
+                github: "https://github.com/zenzesama/bad-apple-psp"
             },
             3: {
-                title: "Project Three",
-                content: "<p>Description of your third project goes here.</p>"
+                title: "zecache",
+                description: "zecache is a small header-only C++ utility that makes recursive functions way faster by automatically caching their results. Instead of rewriting your logic for memoization, you just wrap your recursion in a lambda and let it handle the rest. It works with any number of arguments and even has an optional LRU mode if you want to limit memory usage. It’s mainly a clean way to keep recursive code simple without paying the usual performance cost.",
+                image: "images/zecache.png",
+                github: "https://github.com/zenzesama/zecache"
             }
         };
 
@@ -80,8 +86,12 @@
 
                 viewer.innerHTML = `
                     <div class="project-content">
-                        <h3>${project.title}</h3>
-                        ${project.content}
+                        <h2 class="project-title">${project.title}</h2>
+                        <img src="${project.image}" alt="${project.title}" class="project-image">
+                        <p class="project-description">${project.description}</p>
+                        <a href="${project.github}" target="_blank" class="github-link">
+                            View on GitHub
+                        </a>
                     </div>
                 `;
             });

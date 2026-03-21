@@ -220,3 +220,32 @@ tr:nth-child(even) {
         margin-left: 0;
     }
 }
+
+.project-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.project-image {
+    width: 100%;
+    max-width: 600px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+.project-description {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.github-link {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #0077cc;
+    font-weight: bold;
+}
+
+.github-link:hover {
+    text-decoration: underline;
+}
