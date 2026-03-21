@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <h1>My Site</h1>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <p class="sidebar-updated">Last updated: March 2026</p>
+    </nav>
+
+    <main class="content">
+        <h2>Projects</h2>
+        <hr>
+
+        <div class="projects-container">
+            <div class="project-viewer" id="viewer">
+                <p class="empty-state">Select a project to view details.</p>
+            </div>
+            <div class="project-list">
+                <table>
+                    <tr>
+                        <th>Project</th>
+                    </tr>
+                </table>
+                <table id="projectTable">
+                    <tr class="project-row" data-project="1">
+                        <td>Project One</td>
+                    </tr>
+                    <tr class="project-row" data-project="2">
+                        <td>Project Two</td>
+                    </tr>
+                    <tr class="project-row" data-project="3">
+                        <td>Project Three</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><a href="../index.html">Back to Home</a></p>
+        </div>
+    </main>
+
+    <script>
+        const projects = {
+            1: {
+                title: "Project One",
+                content: "<p>Description of your first project goes here. What did you build? What technologies did you use?</p><p>You can add more details, images, or links here.</p>"
+            },
+            2: {
+                title: "Project Two",
+                content: "<p>Description of your second project goes here. Add links or images as needed.</p>"
+            },
+            3: {
+                title: "Project Three",
+                content: "<p>Description of your third project goes here.</p>"
+            }
+        };
+
+        const rows = document.querySelectorAll('.project-row');
+        const viewer = document.getElementById('viewer');
+
+        rows.forEach(row => {
+            row.addEventListener('click', () => {
+                rows.forEach(r => r.classList.remove('active'));
+                row.classList.add('active');
+
+                const id = row.dataset.project;
+                const project = projects[id];
+
+                viewer.innerHTML = `
+                    <div class="project-content">
+                        <h3>${project.title}</h3>
+                        ${project.content}
+                    </div>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>
