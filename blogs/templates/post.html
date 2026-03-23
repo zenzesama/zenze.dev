@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$title$ - zenze's blog</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .post-meta {
+            font-size: 11px;
+            color: #404040;
+            margin-bottom: 20px;
+        }
+        .post-meta span {
+            margin-right: 15px;
+        }
+        .content pre {
+            background-color: rgba(192, 192, 192, 0.4);
+            border: 1px solid #808080;
+            padding: 10px;
+            overflow-x: auto;
+            font-family: "Courier New", monospace;
+            font-size: 12px;
+        }
+        .content code {
+            background-color: rgba(192, 192, 192, 0.4);
+            padding: 1px 4px;
+            font-family: "Courier New", monospace;
+            font-size: 12px;
+        }
+        .content pre code {
+            background: none;
+            padding: 0;
+        }
+        .content blockquote {
+            border-left: 3px solid #808080;
+            margin-left: 0;
+            padding-left: 15px;
+            color: #404040;
+        }
+        .back-link {
+            font-size: 12px;
+            margin-bottom: 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <h1>zenze's website</h1>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../pages/projects.html">Projects</a></li>
+            <li><a href="../index.html">Blog</a></li>
+            <li><a href="../../pages/about.html">About</a></li>
+        </ul>
+        <p class="sidebar-updated">Last updated: $date$</p>
+    </nav>
+
+    <main class="content">
+        <h2>$title$</h2>
+        <div class="post-meta">
+            <span>$date$</span>
+$if(tags)$
+            <span>$tags$</span>
+$endif$
+        </div>
+        <hr>
+
+        $body$
+
+        <div class="footer">
+            <p><a href="../index.html">Back to Blog</a> · <a href="../../index.html">Home</a></p>
+        </div>
+    </main>
+</body>
+</html>
